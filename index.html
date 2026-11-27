@@ -6,7 +6,7 @@
 <title>Fayas &amp; Fathima Nikkah</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Alex+Brush&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Alex+Brush&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
 :root{
   --ivory:#FFF8EC; --paper:#F1E0C3; --cream:#F4E4C8;
@@ -589,6 +589,61 @@ body::after{opacity:.065; mix-blend-mode:normal}
 .intro-bg::after{background:linear-gradient(180deg, rgba(30,110,80,.30), rgba(8,26,19,.2)); mix-blend-mode:screen}
 .intro::before{background:radial-gradient(ellipse at center, transparent 35%, rgba(0,8,5,.78) 100%)}
 .music{background:#0F2A20; border-color:#D4B26A; color:#F3EBD9}
+
+/* ================= Engagement-card style: textured emerald + gold leaves ================= */
+body{
+  background-color:#0E3028;
+  background-image:
+    radial-gradient(ellipse at 50% 40%, rgba(3,14,10,.12) 30%, rgba(3,14,10,.6) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.006' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .02 0 0 0 0 .09 0 0 0 0 .07 2.4 0 0 0 -.95'/%3E%3C/filter%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .20 0 0 0 0 .42 0 0 0 0 .36 0 2.2 0 0 -1.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-size:auto, 700px 700px;
+  background-attachment:fixed, scroll;
+}
+body::after{opacity:.05}
+.wrap{
+  --ivory:#0F3229; --paper:#0C2A22; --ink:#E4D3A8; --ink-soft:#BFAE85;
+  --forest:#E3CC92; --sage-deep:#D4BC7E; --sage:#D4BC7E; --gold:#D4BC7E; --line:rgba(212,188,126,.34);
+  font-family:"Josefin Sans", "Segoe UI", sans-serif; font-weight:300; font-size:1.05rem; letter-spacing:.02em;
+}
+.wrap .script, .wrap .couple, .wrap .fam h3, .wrap h2, .wrap footer .sig, .still .pc2, .names2 .n{font-family:"Alex Brush", cursive; font-weight:400; letter-spacing:0}
+.wrap .fam .parents{font-weight:600}
+.wrap .event .place{font-weight:600}
+.wrap .event, .wrap .rsvp-card, .wrap .count div{background-color:rgba(8,32,25,.62); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px)}
+.wrap .chapter{color:#CDB77F; font-style:normal; letter-spacing:.3em; font-size:.8rem; text-transform:uppercase}
+.wrap .chapter::before, .wrap .chapter::after{background:#CDB77F}
+.wrap .btn{font-family:"Josefin Sans", sans-serif; font-weight:600; letter-spacing:.06em; color:#0C2A22; background:linear-gradient(180deg,#EAD49C,#C7A862)}
+.wrap .event .time, .wrap .event .when, .wrap .cal, .wrap .fam .role, .wrap .fam .of, .rsvp-lead, .wrap .fld em, .wrap footer .msg, .wrap footer .wishes, .still .pc1{font-style:normal}
+.wrap .event .time{font-weight:400}
+
+.hero2{position:relative; margin:-2rem -16px 0; padding:0 24px 0; text-align:center}
+.leafband{height:118px; overflow:hidden; margin:0 -24px}
+.leafband svg{display:block; width:100%; height:100%}
+.leafband.top{margin-bottom:1.4rem}
+.leafband.bot{margin-top:2.2rem}
+.leafband.end{margin:2.4rem -16px 0}
+.bis2{font-family:"Amiri", serif; direction:rtl; font-size:clamp(2rem, 8vw, 2.5rem); line-height:1.4; color:#D9C185; margin:0}
+.grule{display:block; width:min(220px, 60%); height:4px; margin:.6rem auto 1.8rem; background:linear-gradient(90deg,#B99A55,#E6D196,#B99A55)}
+.lead2{font-weight:300; font-size:1.15rem; line-height:1.75; color:#E2D0A2; max-width:24ch; margin:0 auto; letter-spacing:.03em}
+.names2{margin:1.2rem 0 1.2rem; font-weight:400; line-height:1; color:#E6CF95}
+.names2 .n{display:block; font-size:clamp(4.4rem, 21vw, 6rem); line-height:1.05; text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.names2 .and{display:block; font-family:"Josefin Sans", sans-serif; font-size:1rem; letter-spacing:.12em; color:#E2D0A2; margin:.1rem 0 .2rem}
+.when2{font-weight:400; font-size:1.15rem; letter-spacing:.06em; color:#E6CF95; margin:0}
+.where2{font-weight:300; font-size:1.05rem; color:#E2D0A2; margin:.6rem 0 0}
+
+.still-frame::after{background:linear-gradient(180deg, rgba(20,80,60,.15), rgba(8,30,22,.40)), radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.45))}
+
+/* cover + intro type to match */
+.cover .cn{font-family:"Alex Brush", cursive}
+.cover .pre, .cover .cd, .open{font-family:"Josefin Sans", sans-serif}
+.cover .pre{font-style:normal; font-weight:300; letter-spacing:.12em}
+.cover::before{background:linear-gradient(180deg, rgba(10,40,31,.05) 0%, rgba(10,40,31,.25) 40%, rgba(12,42,34,.9) 72%, #0E3027 100%)}
+.tc.names .n, .tc.names .amp{font-family:"Alex Brush", cursive}
+.tc .line, .tc .big, .tc .sub{font-family:"Josefin Sans", sans-serif; font-weight:300; font-style:normal}
+.tc .line2{font-family:"Alex Brush", cursive}
+.tc .big{letter-spacing:.08em; font-size:clamp(1.6rem, 7vw, 2.3rem)}
+.tc .sub{font-size:1.05rem; letter-spacing:.06em}
+.intro-bg::after{background:linear-gradient(180deg, rgba(30,110,80,.32), rgba(10,40,31,.25))}
+.music{background:#0F3229; border-color:#D4BC7E; color:#E6CF95}
 </style>
 </head>
 <body>
@@ -611,6 +666,13 @@ body::after{opacity:.065; mix-blend-mode:normal}
       <path d="M11 98 H29 L25 106 H15 Z" fill="#C9A24A"/>
       <line x1="20" y1="106" x2="20" y2="116" stroke="#C9A24A" stroke-width="1"/>
       <path d="M20 115 l3 5 -3 5 -3 -5z" fill="#C9A24A"/>
+    </symbol>
+    <symbol id="gleaf" viewBox="0 0 60 140">
+      <g fill="none" stroke="#D4BC7E" stroke-linecap="round">
+        <path d="M30 2 C56 36 56 104 30 138 C4 104 4 36 30 2Z" stroke-width="1.2"/>
+        <path d="M30 2 V138" stroke-width="1.1"/>
+        <path d="M30 14 L26.4 5 M30 14 L33.6 5 M30 20 L23.0 11 M30 20 L37.0 11 M30 26 L20.1 17 M30 26 L39.9 17 M30 32 L17.4 23 M30 32 L42.6 23 M30 38 L15.0 29 M30 38 L45.0 29 M30 44 L12.8 35 M30 44 L47.2 35 M30 50 L11.0 41 M30 50 L49.0 41 M30 56 L9.5 47 M30 56 L50.5 47 M30 62 L8.4 53 M30 62 L51.6 53 M30 68 L7.6 59 M30 68 L52.4 59 M30 74 L7.1 65 M30 74 L52.9 65 M30 80 L7.0 71 M30 80 L53.0 71 M30 86 L7.2 77 M30 86 L52.8 77 M30 92 L7.8 83 M30 92 L52.2 83 M30 98 L8.7 89 M30 98 L51.3 89 M30 104 L10.0 95 M30 104 L50.0 95 M30 110 L11.6 101 M30 110 L48.4 101 M30 116 L13.5 107 M30 116 L46.5 107 M30 122 L15.7 113 M30 122 L44.3 113 M30 128 L18.2 119 M30 128 L41.8 119" stroke-width=".55" stroke-opacity=".9"/>
+      </g>
     </symbol>
     <symbol id="sprig" viewBox="0 0 120 160">
       <path d="M60 158 C55 120 66 82 58 8" stroke="#B08433" stroke-width="1.3" fill="none"/>
@@ -667,23 +729,15 @@ body::after{opacity:.065; mix-blend-mode:normal}
 
 <main class="wrap">
 
-  <div class="hero">
-
-    <p class="bis">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-    <p class="together">Together with their families</p>
-    <h1 class="couple script">
-      <span class="n">Fayas</span>
-      <span class="amp">&amp;</span>
-      <span class="n">Fathima</span>
-    </h1>
-    <p class="invite">request the pleasure of your company as they begin their journey together</p>
-
-    <div class="datebar">
-      <span class="side">Sunday</span>
-      <span class="mid"><b>27</b><span>December</span></span>
-      <span class="side">11:30 AM</span>
-    </div>
-    <p class="year">2026</p>
+  <div class="hero2">
+    <div class="leafband top"><svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><g><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(18 20) rotate(-35)"/><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(78 30) rotate(28)"/><use href="#gleaf" x="-30.0" y="-70.0" width="60.0" height="140.0" transform="translate(140 8) rotate(-12)"/><use href="#gleaf" x="-36.0" y="-84.0" width="72.0" height="168.0" transform="translate(205 34) rotate(40)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(262 10) rotate(-30)"/><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(322 28) rotate(22)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(385 14) rotate(-40)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(110 70) rotate(60)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(300 72) rotate(-62)"/></g></svg></div>
+    <p class="bis2">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+    <span class="grule" aria-hidden="true"></span>
+    <p class="lead2">With the blessings of Allah, we are delighted to invite you to the wedding of</p>
+    <h1 class="names2"><span class="n">Fayas</span><span class="and">AND</span><span class="n">Fathima</span></h1>
+    <p class="when2">27 DECEMBER 2026, 11:30 AM</p>
+    <p class="where2">Georgian Lake View Convention Centre, Muhamma</p>
+    <div class="leafband bot"><svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><g transform="translate(0 130) scale(1 -1)"><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(25 24) rotate(30)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(92 12) rotate(-38)"/><use href="#gleaf" x="-36.0" y="-84.0" width="72.0" height="168.0" transform="translate(160 34) rotate(18)"/><use href="#gleaf" x="-30.0" y="-70.0" width="60.0" height="140.0" transform="translate(228 8) rotate(-25)"/><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(292 30) rotate(35)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(360 16) rotate(-20)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(60 74) rotate(-65)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(250 74) rotate(62)"/></g></svg></div>
   </div>
 
   <svg class="divider" viewBox="0 0 150 28" aria-hidden="true">
@@ -855,6 +909,7 @@ body::after{opacity:.065; mix-blend-mode:normal}
     <p class="msg">Your presence and blessings will make our day truly special</p>
     <p class="wishes">With warm wishes</p>
     <p class="sig script">Fairoos Amana Khan &amp; Farzul S Khan</p>
+    <div class="leafband bot end"><svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><g transform="translate(0 130) scale(1 -1)"><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(25 24) rotate(30)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(92 12) rotate(-38)"/><use href="#gleaf" x="-36.0" y="-84.0" width="72.0" height="168.0" transform="translate(160 34) rotate(18)"/><use href="#gleaf" x="-30.0" y="-70.0" width="60.0" height="140.0" transform="translate(228 8) rotate(-25)"/><use href="#gleaf" x="-34.5" y="-80.5" width="69.0" height="161.0" transform="translate(292 30) rotate(35)"/><use href="#gleaf" x="-31.5" y="-73.5" width="63.0" height="147.0" transform="translate(360 16) rotate(-20)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(60 74) rotate(-65)"/><use href="#gleaf" x="-22.5" y="-52.5" width="45.0" height="105.0" transform="translate(250 74) rotate(62)"/></g></svg></div>
   </footer>
 </main>
 
