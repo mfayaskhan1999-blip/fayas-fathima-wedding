@@ -291,6 +291,46 @@ body::after{content:""; position:fixed; inset:-50%; z-index:15; pointer-events:n
   .grain, body::after, .photo .kbw img{animation:none}
   .reveal{opacity:1; filter:none; transform:none}
 }
+
+/* ================= Tinted cinematic main page ================= */
+body{
+  background-color:#0F0A07;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(201,162,74,.16), transparent 55%),
+    radial-gradient(ellipse at 15% 55%, rgba(122,31,43,.16), transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(122,31,43,.14), transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23C9A24A' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='24' y='24' width='24' height='24'/%3E%3Crect x='24' y='24' width='24' height='24' transform='rotate(45 36 36)'/%3E%3Cpath d='M0 36h19M53 36h19M36 0v19M36 53v19'/%3E%3Ccircle cx='0' cy='0' r='8'/%3E%3Ccircle cx='72' cy='0' r='8'/%3E%3Ccircle cx='0' cy='72' r='8'/%3E%3Ccircle cx='72' cy='72' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment:fixed, fixed, fixed, scroll;
+}
+body::after{opacity:.075}
+.wrap{
+  color-scheme:dark;
+  --ivory:#1D1511; --paper:#140E0B; --cream:#271C16;
+  --ink:#EFE4CE; --ink-soft:#B8A487;
+  --forest:#F3E6C8; --sage-deep:#D9BD7E; --sage:#A44452;
+  --gold:#C9A24A; --line:rgba(217,189,126,.32);
+  color:var(--ink);
+}
+.wrap .card, .wrap .event, .wrap .rsvp-card, .wrap .count div{
+  background-color:rgba(29,21,17,.86);
+  box-shadow:0 0 0 1px rgba(217,189,126,.12), 0 24px 60px rgba(0,0,0,.55);
+}
+.wrap .card{background-image:radial-gradient(ellipse at 50% 0%, rgba(201,162,74,.12), transparent 60%)}
+.wrap .event{background-image:linear-gradient(rgba(29,21,17,.9), rgba(29,21,17,.9)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23C9A24A' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='24' y='24' width='24' height='24'/%3E%3Crect x='24' y='24' width='24' height='24' transform='rotate(45 36 36)'/%3E%3Cpath d='M0 36h19M53 36h19M36 0v19M36 53v19'/%3E%3Ccircle cx='0' cy='0' r='8'/%3E%3Ccircle cx='72' cy='0' r='8'/%3E%3Ccircle cx='0' cy='72' r='8'/%3E%3Ccircle cx='72' cy='72' r='8'/%3E%3C/g%3E%3C/svg%3E"); background-size:auto, 72px 72px}
+.wrap .couple{color:#F3E6C8; text-shadow:0 4px 24px rgba(0,0,0,.6)}
+.wrap .datebar .mid b{color:#F3E6C8}
+.wrap .photo .frame{background:#1D1511; box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.wrap .photo img{filter:sepia(.38) brightness(.88) contrast(1.08)}
+.wrap .btn{color:#1A120D; background:linear-gradient(180deg,#E9D29A,#C9A24A); box-shadow:0 8px 20px rgba(0,0,0,.45)}
+.wrap .btn:hover{background:linear-gradient(180deg,#F1DDA8,#D4AE55)}
+.wrap .pick{background:#140E0B; color:var(--ink)}
+.wrap .pick[aria-checked="true"]{background:#C9A24A; border-color:#C9A24A; color:#1A120D}
+.wrap .pick[aria-checked="true"] .ico{color:#5A0F1C}
+.wrap .fld input[type=text], .wrap .fld textarea, .wrap .stepper{background:#120C09; color:var(--ink); border-color:var(--line)}
+.wrap .fld input::placeholder, .wrap .fld textarea::placeholder{color:#7F6E5B}
+.wrap .stepper output{color:var(--ink)}
+.wrap .err{color:#E8908A}
+.wrap .star8 circle[fill]{fill:#C9A24A}
 </style>
 </head>
 <body>
@@ -300,7 +340,7 @@ body::after{content:""; position:fixed; inset:-50%; z-index:15; pointer-events:n
   <defs>
     <symbol id="sprig" viewBox="0 0 120 160">
       <path d="M60 158 C55 120 66 82 58 8" stroke="#B08433" stroke-width="1.3" fill="none"/>
-      <g fill="#8E2B38">
+      <g fill="#A44452">
         <ellipse cx="45" cy="132" rx="17" ry="6.5" transform="rotate(-32 45 132)"/>
         <ellipse cx="76" cy="113" rx="17" ry="6.5" transform="rotate(32 76 113)" opacity=".85"/>
         <ellipse cx="45" cy="92" rx="15" ry="6" transform="rotate(-36 45 92)" opacity=".9"/>
@@ -380,7 +420,7 @@ body::after{content:""; position:fixed; inset:-50%; z-index:15; pointer-events:n
 
   <svg class="divider" viewBox="0 0 150 28" aria-hidden="true">
     <path d="M4 14h56M90 14h56" stroke="#B08433" stroke-width="1"/>
-    <g fill="#8E2B38">
+    <g fill="#A44452">
       <ellipse cx="66" cy="10" rx="8" ry="3.2" transform="rotate(-25 66 10)"/>
       <ellipse cx="84" cy="10" rx="8" ry="3.2" transform="rotate(25 84 10)"/>
       <ellipse cx="66" cy="18" rx="8" ry="3.2" transform="rotate(25 66 18)" opacity=".7"/>
@@ -419,7 +459,7 @@ body::after{content:""; position:fixed; inset:-50%; z-index:15; pointer-events:n
 
   <svg class="divider" viewBox="0 0 150 28" aria-hidden="true">
     <path d="M4 14h56M90 14h56" stroke="#B08433" stroke-width="1"/>
-    <g fill="#8E2B38">
+    <g fill="#A44452">
       <ellipse cx="66" cy="10" rx="8" ry="3.2" transform="rotate(-25 66 10)"/>
       <ellipse cx="84" cy="10" rx="8" ry="3.2" transform="rotate(25 84 10)"/>
       <ellipse cx="66" cy="18" rx="8" ry="3.2" transform="rotate(25 66 18)" opacity=".7"/>
@@ -537,7 +577,7 @@ body::after{content:""; position:fixed; inset:-50%; z-index:15; pointer-events:n
   <footer>
     <svg class="divider" viewBox="0 0 150 28" aria-hidden="true">
       <path d="M4 14h56M90 14h56" stroke="#B08433" stroke-width="1"/>
-      <g fill="#8E2B38">
+      <g fill="#A44452">
         <ellipse cx="66" cy="10" rx="8" ry="3.2" transform="rotate(-25 66 10)"/>
         <ellipse cx="84" cy="10" rx="8" ry="3.2" transform="rotate(25 84 10)"/>
         <ellipse cx="66" cy="18" rx="8" ry="3.2" transform="rotate(25 66 18)" opacity=".7"/>
