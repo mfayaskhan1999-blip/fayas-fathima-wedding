@@ -522,6 +522,73 @@ body::after{opacity:.05; mix-blend-mode:multiply}
 .intro-bg::after{background:linear-gradient(160deg, rgba(255,150,60,.28), rgba(120,50,20,.15) 60%, rgba(255,190,120,.12)); mix-blend-mode:soft-light}
 .intro::before{background:radial-gradient(ellipse at center, transparent 40%, rgba(40,18,6,.7) 100%)}
 .music{background:#4A2A1A; border-color:#E0B06A; color:#FBEBD6}
+
+/* ================= Deep emerald & gold theme ================= */
+body{
+  background-color:#0A1A14;
+  background-image:
+    radial-gradient(circle at 85% 8%, rgba(212,178,106,.12) 0, transparent 28%),
+    radial-gradient(circle at 10% 40%, rgba(40,110,80,.20) 0, transparent 32%),
+    radial-gradient(circle at 90% 70%, rgba(212,178,106,.08) 0, transparent 26%),
+    radial-gradient(ellipse at 50% 0%, rgba(22,70,52,.75), transparent 60%),
+    linear-gradient(180deg, #0D231B 0%, #0A1A14 55%, #08140F 100%);
+  background-attachment:fixed;
+}
+body::after{opacity:.065; mix-blend-mode:normal}
+.wrap{
+  color-scheme:dark;
+  --ivory:#0F2A20; --paper:#0B1F18; --cream:#14342811;
+  --ink:#F1E9D8; --ink-soft:#B4B8A5;
+  --forest:#F3EBD9; --sage-deep:#D4B26A; --sage:#D4B26A;
+  --gold:#D4B26A; --line:rgba(212,178,106,.30);
+}
+.wrap .event, .wrap .rsvp-card, .wrap .count div{
+  background-color:rgba(13,38,29,.80); background-image:none;
+  box-shadow:0 0 0 1px rgba(212,178,106,.12), 0 26px 60px rgba(0,0,0,.5);
+}
+.wrap .chapter{color:#C9B27E}
+.wrap .chapter::before, .wrap .chapter::after{background:#C9B27E}
+.wrap .btn{color:#0A1A14; background:linear-gradient(180deg,#EFD79C,#C9A456); box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.wrap .btn:hover{background:linear-gradient(180deg,#F5E0AA,#D3AF62)}
+.wrap .pick{background:#0B2019; color:var(--ink)}
+.wrap .pick[aria-checked="true"]{background:#D4B26A; border-color:#D4B26A; color:#0A1A14}
+.wrap .pick[aria-checked="true"] .ico{color:#0A1A14}
+.wrap .fld input[type=text], .wrap .fld textarea, .wrap .stepper{background:#09190F; color:var(--ink)}
+.wrap .fld input::placeholder, .wrap .fld textarea::placeholder{color:#6E8072}
+.wrap .err{color:#E8908A}
+.divider path{stroke:#D4B26A; stroke-opacity:.6}
+.divider rect{fill:#D4B26A}
+
+.hero::before{background:radial-gradient(closest-side, rgba(212,178,106,.13), transparent)}
+.hero .bis{color:#D4B26A}
+.hero .together{color:#B4B8A5}
+.hero .couple{color:#F5EEDD; text-shadow:0 0 40px rgba(212,178,106,.22), 0 6px 30px rgba(0,0,0,.7)}
+.hero .couple .amp{color:#D4B26A}
+.hero .datebar .side{color:#D4B26A}
+.hero .datebar .mid b{color:#F5EEDD}
+.hero .year{color:#D4B26A}
+.hero .together::before{background:linear-gradient(180deg, transparent, #D4B26A)}
+.hero .year::after{background:linear-gradient(180deg, #D4B26A, transparent)}
+
+.still-frame{box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.still-frame img{filter:grayscale(.25) contrast(1.08) brightness(.9)}
+.still-frame::after{background:linear-gradient(180deg, rgba(20,70,50,.18), rgba(8,20,15,.45)), radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.5))}
+.still-frame::before{
+  background:
+    linear-gradient(#D4B26A,#D4B26A) top left/22px 1px no-repeat, linear-gradient(#D4B26A,#D4B26A) top left/1px 22px no-repeat,
+    linear-gradient(#D4B26A,#D4B26A) top right/22px 1px no-repeat, linear-gradient(#D4B26A,#D4B26A) top right/1px 22px no-repeat,
+    linear-gradient(#D4B26A,#D4B26A) bottom left/22px 1px no-repeat, linear-gradient(#D4B26A,#D4B26A) bottom left/1px 22px no-repeat,
+    linear-gradient(#D4B26A,#D4B26A) bottom right/22px 1px no-repeat, linear-gradient(#D4B26A,#D4B26A) bottom right/1px 22px no-repeat}
+.still .pc1{color:#C9B27E}
+.still .pc2{color:#F3EBD9}
+
+/* cover + intro graded emerald */
+.cover::before{background:linear-gradient(180deg, rgba(8,26,19,.1) 0%, rgba(8,26,19,.25) 40%, rgba(8,26,19,.88) 72%, #08140F 100%)}
+.cover img{filter:grayscale(.25) brightness(.9) contrast(1.05)}
+.intro-bg img{filter:grayscale(.35) brightness(.36) contrast(1.15)}
+.intro-bg::after{background:linear-gradient(180deg, rgba(30,110,80,.30), rgba(8,26,19,.2)); mix-blend-mode:screen}
+.intro::before{background:radial-gradient(ellipse at center, transparent 35%, rgba(0,8,5,.78) 100%)}
+.music{background:#0F2A20; border-color:#D4B26A; color:#F3EBD9}
 </style>
 </head>
 <body>
