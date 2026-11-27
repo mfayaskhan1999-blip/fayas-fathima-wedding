@@ -1086,7 +1086,7 @@ function endIntro(){
   timers.forEach(clearTimeout);
   intro.classList.add('out');
   musicBtn.hidden = false; sync();
-  startReveals(); setTimeout(showHint, 1200);
+  startReveals(); setTimeout(showHint, 1200); setTimeout(startAuto, 3800);
   setTimeout(() => { intro.hidden = true; }, 1700);
 }
 function playIntro(){
@@ -1112,16 +1112,42 @@ function showHint(){
 hint.addEventListener('click', () => {
   const next = document.querySelector('.wrap > .still') || document.querySelector('.wrap > section');
   const y = next ? next.getBoundingClientRect().top + scrollY - 20 : innerHeight * .85;
+  stopAuto();
   window.scrollTo({top: y, behavior: reduce ? 'auto' : 'smooth'});
   hideHint();
 });
 addEventListener('scroll', () => { if (scrollY > 120) hideHint(); }, {passive:true});
+
+/* ---------- Gentle auto-scroll ---------- */
+let autoOn = false, autoStopped = false, autoY = 0, autoLast = 0;
+const AUTO_SPEED = 42; // pixels per second
+function stopAuto(){ autoStopped = true; autoOn = false; }
+['touchstart','wheel','mousedown','keydown'].forEach(ev => addEventListener(ev, e => {
+  if (!introDone) return;
+  if (e.target && e.target.closest && e.target.closest('#musicBtn, #skipBtn, #openBtn')) return;
+  stopAuto();
+}, {passive:true}));
+function autoStep(t){
+  if (!autoOn) return;
+  const dt = autoLast ? Math.min(.1, (t - autoLast) / 1000) : 0; autoLast = t;
+  const target = document.querySelector('.rsvp');
+  const stopAt = target ? target.getBoundingClientRect().top + scrollY - 24 : document.documentElement.scrollHeight - innerHeight;
+  autoY = Math.min(stopAt, autoY + AUTO_SPEED * dt);
+  window.scrollTo(0, autoY);
+  if (autoY >= stopAt - 1){ autoOn = false; autoStopped = true; return; }
+  requestAnimationFrame(autoStep);
+}
+function startAuto(){
+  if (reduce || autoStopped || autoOn) return;
+  autoOn = true; autoY = scrollY; autoLast = 0; hideHint();
+  requestAnimationFrame(autoStep);
+}
 document.getElementById('skipBtn').addEventListener('click', endIntro);
 
 document.getElementById('openBtn').addEventListener('click', ()=>{
   document.getElementById('cover').classList.add('gone');
   bgm.play().catch(()=>{});
-  if (reduce){ introDone = true; musicBtn.hidden = false; sync(); startReveals(); setTimeout(showHint, 1200); }
+  if (reduce){ introDone = true; musicBtn.hidden = false; sync(); startReveals(); setTimeout(showHint, 1200); setTimeout(startAuto, 3800); }
   else playIntro();
 });
 </script>
