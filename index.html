@@ -380,6 +380,81 @@ body::after{opacity:.075}
 .il-lan{transform-box:fill-box; transform-origin:50% 0; animation:sway 4.6s ease-in-out infinite alternate; filter:drop-shadow(0 0 6px rgba(255,190,90,.6))}
 .il-lan.r{animation-delay:-2.3s}
 @media (prefers-reduced-motion: reduce){ .il-lan{animation:none} }
+
+/* ================= Midnight & champagne cinematic theme ================= */
+body{
+  background-color:#0A0F1A;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(216,191,140,.10) 0, transparent 22%),
+    radial-gradient(circle at 85% 28%, rgba(199,154,154,.09) 0, transparent 20%),
+    radial-gradient(circle at 12% 62%, rgba(120,150,210,.08) 0, transparent 24%),
+    radial-gradient(circle at 88% 82%, rgba(216,191,140,.08) 0, transparent 22%),
+    radial-gradient(ellipse at 50% 0%, rgba(40,58,98,.55), transparent 60%),
+    linear-gradient(180deg, #0B1220 0%, #0A0F1A 50%, #0C0F18 100%);
+  background-attachment:fixed;
+}
+body::after{opacity:.06}
+.wrap{
+  --ivory:#121A2A; --paper:#0B111D; --cream:#1A2336;
+  --ink:#EEE8DD; --ink-soft:#A9A6A6;
+  --forest:#F2EAD9; --sage-deep:#D8BF8C; --sage:#C79A9A;
+  --gold:#D8BF8C; --line:rgba(216,191,140,.28);
+}
+.wrap .event, .wrap .rsvp-card, .wrap .count div{
+  background-color:rgba(16,23,38,.78); background-image:none;
+  box-shadow:0 0 0 1px rgba(216,191,140,.10), 0 28px 70px rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+}
+.wrap .chapter{color:#C9A0A0}
+.wrap .chapter::before, .wrap .chapter::after{background:#C9A0A0}
+.wrap .btn{color:#0B111D; background:linear-gradient(180deg,#F0E0BA,#CDAE72)}
+.wrap .btn:hover{background:linear-gradient(180deg,#F6E8C8,#D7B97E)}
+.wrap .pick{background:#0D1422}
+.wrap .pick[aria-checked="true"]{background:#D8BF8C; border-color:#D8BF8C; color:#0B111D}
+.wrap .pick[aria-checked="true"] .ico{color:#0B111D}
+.wrap .fld input[type=text], .wrap .fld textarea, .wrap .stepper{background:#0D1422}
+.wrap .fld input::placeholder, .wrap .fld textarea::placeholder{color:#6F7686}
+.divider ellipse{display:none}
+.divider path{stroke:#D8BF8C; stroke-opacity:.6}
+.divider rect{fill:#D8BF8C}
+
+/* hero: cinematic title */
+.hero{padding:4.5rem .5rem 3.5rem}
+.hero::before{left:0; right:0; top:0; height:70%; background:radial-gradient(closest-side, rgba(216,191,140,.12), transparent)}
+.hero .bis{font-size:1.2rem; color:#D8BF8C; opacity:.85}
+.hero .together{letter-spacing:.18em; font-size:1rem; margin-top:1.6rem}
+.hero .couple{color:#F4EDE0; text-shadow:0 0 40px rgba(216,191,140,.25), 0 6px 30px rgba(0,0,0,.7)}
+.wrap .hero .couple .n{font-size:clamp(4.4rem, 21vw, 6.4rem)}
+.hero .couple .amp{color:#C9A0A0}
+.hero .datebar{max-width:300px}
+.hero .datebar .side{color:#D8BF8C}
+.hero .year{color:#C9A0A0}
+.hero .together::before, .hero .year::after{content:""; display:block; width:1px; height:42px; margin:0 auto 1rem; background:linear-gradient(180deg, transparent, #D8BF8C)}
+.hero .year::after{margin:1rem auto 0; background:linear-gradient(180deg, #D8BF8C, transparent)}
+
+/* photo: film still */
+.still{margin:1rem auto 0; max-width:340px}
+.still-frame{position:relative; box-shadow:0 30px 80px rgba(0,0,0,.65)}
+.still-frame img{display:block; width:100%; aspect-ratio:3/4.2; object-fit:cover; object-position:50% 0; filter:grayscale(.2) contrast(1.08) brightness(.92)}
+.still-frame::after{content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(10,15,26,0) 55%, rgba(10,15,26,.6)), radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.5)),
+  linear-gradient(180deg, rgba(40,58,98,.18), rgba(199,154,154,.08))}
+.still-frame::before{content:""; position:absolute; inset:-12px; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(#D8BF8C,#D8BF8C) top left/22px 1px no-repeat, linear-gradient(#D8BF8C,#D8BF8C) top left/1px 22px no-repeat,
+    linear-gradient(#D8BF8C,#D8BF8C) top right/22px 1px no-repeat, linear-gradient(#D8BF8C,#D8BF8C) top right/1px 22px no-repeat,
+    linear-gradient(#D8BF8C,#D8BF8C) bottom left/22px 1px no-repeat, linear-gradient(#D8BF8C,#D8BF8C) bottom left/1px 22px no-repeat,
+    linear-gradient(#D8BF8C,#D8BF8C) bottom right/22px 1px no-repeat, linear-gradient(#D8BF8C,#D8BF8C) bottom right/1px 22px no-repeat}
+.still figcaption{margin-top:1.6rem; text-align:center; line-height:1.15}
+.still .pc1{display:block; font-style:italic; letter-spacing:.2em; font-size:1rem; color:#C9A0A0}
+.still .pc2{display:block; font-family:"Pinyon Script", cursive; font-size:clamp(2.4rem, 10vw, 3rem); color:#F2EAD9}
+
+/* cover + intro graded to midnight */
+.cover::before{background:linear-gradient(180deg, rgba(10,15,26,.1) 0%, rgba(10,15,26,.25) 40%, rgba(10,15,26,.88) 72%, #0A0F1A 100%)}
+.cover img{filter:grayscale(.2) brightness(.9) contrast(1.05)}
+.intro-bg img{filter:grayscale(.35) brightness(.34) contrast(1.15)}
+.intro-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(30,48,90,.35), rgba(10,15,26,.2)); mix-blend-mode:screen}
+.music{background:#16203A; border-color:#D8BF8C; color:#F2EAD9}
 </style>
 </head>
 <body>
@@ -459,20 +534,7 @@ body::after{opacity:.075}
 <main class="wrap">
 
   <div class="hero">
-    <svg class="mihrab" viewBox="0 0 360 640" preserveAspectRatio="none" aria-hidden="true">
-      <g fill="none" stroke="#C9A24A" vector-effect="non-scaling-stroke">
-        <path d="M40 640 V250 C40 140 128 92 180 44 C232 92 320 140 320 250 V640" stroke-width="1.3" vector-effect="non-scaling-stroke"/>
-        <path d="M52 640 V256 C52 152 134 108 180 62 C226 108 308 152 308 256 V640" stroke-width=".8" stroke-opacity=".55" vector-effect="non-scaling-stroke"/>
-        <path d="M24 640 H336" stroke-width=".8" stroke-opacity=".5" vector-effect="non-scaling-stroke"/>
-      </g>
-      <path d="M186 8 a13 13 0 1 0 0 26 a15 15 0 0 1 0 -26z" fill="#D9BD7E"/>
-    </svg>
-    <svg class="lantern l" aria-hidden="true"><use href="#lantern"/></svg>
-    <svg class="lantern r" aria-hidden="true"><use href="#lantern"/></svg>
-    <svg class="lantern l2" aria-hidden="true"><use href="#lantern"/></svg>
-    <svg class="lantern r2" aria-hidden="true"><use href="#lantern"/></svg>
 
-    <svg class="star8" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#B08433" stroke-width="1.2"><rect x="9" y="9" width="22" height="22"/><rect x="9" y="9" width="22" height="22" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="5.5"/></g><circle cx="20" cy="20" r="2" fill="#7A1F2B"/></svg>
     <p class="bis">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
     <p class="together">Together with their families</p>
     <h1 class="couple script">
@@ -501,85 +563,10 @@ body::after{opacity:.075}
     <g fill="#B08433"><rect x="71.5" y="10.5" width="7" height="7"/><rect x="71.5" y="10.5" width="7" height="7" transform="rotate(45 75 14)"/></g>
   </svg>
 
-  <section class="pscroll" aria-label="Photo of Fayas and Fathima">
-    <div class="pstick" id="pstick">
-    <figure class="photo" style="margin:0 auto">
-      <div class="frame"><div class="kbw"><svg class="illus" viewBox="0 0 300 430" role="img" aria-label="Illustration of a bride and groom holding hands under an arch, with lanterns and falling petals">
-          <defs>
-            <radialGradient id="ibg" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#3A271A"/><stop offset=".6" stop-color="#1E140F"/><stop offset="1" stop-color="#0F0A07"/></radialGradient>
-            <linearGradient id="igold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E2A8"/><stop offset=".55" stop-color="#D4AA55"/><stop offset="1" stop-color="#A97A2C"/></linearGradient>
-            <linearGradient id="iveil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3E2B6" stop-opacity=".55"/><stop offset="1" stop-color="#C9A24A" stop-opacity=".25"/></linearGradient>
-            <radialGradient id="ihalo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F0B755" stop-opacity=".35"/><stop offset="1" stop-color="#F0B755" stop-opacity="0"/></radialGradient>
-          </defs>
-          <rect width="300" height="430" fill="url(#ibg)"/>
-          <ellipse cx="150" cy="230" rx="130" ry="150" fill="url(#ihalo)"/>
-          <!-- inner arch -->
-          <path d="M34 430 V176 C34 106 102 66 150 30 C198 66 266 106 266 176 V430" fill="none" stroke="#C9A24A" stroke-opacity=".45" stroke-width="1"/>
-          <path d="M156 34 a10 10 0 1 0 0 20 a12 12 0 0 1 0 -20z" fill="#E6CF95" transform="translate(-6 -26)"/>
-          <!-- stars -->
-          <g fill="#F3E2B6">
-            <path d="M70 70 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></path>
-            <path d="M232 88 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6z"><animate attributeName="opacity" values="1;.2;1" dur="2.6s" repeatCount="indefinite"/></path>
-            <path d="M110 46 l1.3 3.2 3.2 1.3 -3.2 1.3 -1.3 3.2 -1.3 -3.2 -3.2 -1.3 3.2 -1.3z"><animate attributeName="opacity" values=".3;1;.3" dur="2.2s" begin="-1s" repeatCount="indefinite"/></path>
-            <path d="M200 52 l1.3 3.2 3.2 1.3 -3.2 1.3 -1.3 3.2 -1.3 -3.2 -3.2 -1.3 3.2 -1.3z"><animate attributeName="opacity" values="1;.3;1" dur="3.4s" repeatCount="indefinite"/></path>
-          </g>
-          <!-- lanterns -->
-          <g class="il-lan"><use href="#lantern" x="52" y="0" width="22" height="72"/></g>
-          <g class="il-lan r"><use href="#lantern" x="226" y="0" width="22" height="72"/></g>
-          <!-- ground glow -->
-          <ellipse cx="150" cy="386" rx="112" ry="9" fill="#C9A24A" opacity=".18"/>
-          <!-- groom -->
-          <g fill="url(#igold)">
-            <circle cx="118" cy="118" r="16.5"/>
-            <path d="M102 112 Q104 96 118 95 Q133 96 134 112 Q127 104 118 104 Q109 104 102 112Z" fill="#8A6226"/>
-            <rect x="112" y="132" width="12" height="11" rx="3"/>
-            <path d="M92 147 Q118 137 144 147 L150 200 L153 302 L83 302 L86 200 Z"/>
-            <path d="M92 149 Q81 192 86 240 L95 240 Q93 198 101 162 Z"/>
-            <circle cx="90.5" cy="243" r="4.8"/>
-            <path d="M142 151 Q160 178 166 212 L157 217 Q150 188 135 164 Z"/>
-            <circle cx="162" cy="216" r="5"/>
-            <path d="M98 302 L100 378 L115 378 L117 302 Z"/>
-            <path d="M120 302 L122 378 L137 378 L139 302 Z"/>
-            <ellipse cx="106" cy="380" rx="10" ry="3.6"/><ellipse cx="131" cy="380" rx="10" ry="3.6"/>
-          </g>
-          <g stroke="#6B4A1E" stroke-opacity=".55" fill="none" stroke-width="1">
-            <path d="M118 146 V302"/>
-            <path d="M104 152 Q118 160 132 152"/>
-            <circle cx="118" cy="170" r="1.4" fill="#6B4A1E"/><circle cx="118" cy="190" r="1.4" fill="#6B4A1E"/><circle cx="118" cy="210" r="1.4" fill="#6B4A1E"/>
-            <path d="M85 290 H151"/>
-          </g>
-          <!-- bride veil (behind) -->
-          <path d="M171 124 Q172 92 193 90 Q215 92 216 122 Q226 172 236 236 Q244 310 252 384 L214 386 Q214 300 208 232 Z" fill="url(#iveil)"/>
-          <!-- bride -->
-          <g fill="url(#igold)">
-            <circle cx="192" cy="124" r="15"/>
-            <path d="M175 124 Q176 100 192 98 Q209 100 210 124 Q204 110 192 110 Q180 110 175 124Z" fill="#F3E2B6" opacity=".9"/>
-            <rect x="187" y="137" width="10" height="10" rx="3"/>
-            <path d="M174 152 Q192 143 210 152 L206 210 L178 210 Z"/>
-            <path d="M176 156 Q165 184 168 214 L177 214 Q177 188 185 165 Z"/>
-            <path d="M178 207 L206 207 Q222 290 238 384 Q192 396 144 384 Q161 290 178 207 Z"/>
-          </g>
-          <g stroke="#6B4A1E" stroke-opacity=".5" fill="none" stroke-width="1">
-            <path d="M150 372 Q192 382 234 372"/><path d="M152 362 Q192 372 232 362" stroke-dasharray="2 4"/>
-            <path d="M183 230 L176 370 M201 230 L210 370" stroke-opacity=".25"/>
-          </g>
-          <!-- hands glow -->
-          <circle cx="165" cy="216" r="9" fill="#FFE6A8" opacity=".35"><animate attributeName="opacity" values=".15;.45;.15" dur="2.8s" repeatCount="indefinite"/></circle>
-          <!-- falling petals -->
-          <g fill="#C45A68">
-            <ellipse rx="3.2" ry="1.8"><animateMotion dur="9s" repeatCount="indefinite" path="M60 -10 C80 100 40 200 70 440"/><animate attributeName="opacity" values="0;1;1;0" dur="9s" repeatCount="indefinite"/></ellipse>
-            <ellipse rx="2.8" ry="1.6" fill="#E6CF95"><animateMotion dur="11s" begin="-4s" repeatCount="indefinite" path="M240 -10 C220 120 260 240 230 440"/><animate attributeName="opacity" values="0;1;1;0" dur="11s" begin="-4s" repeatCount="indefinite"/></ellipse>
-            <ellipse rx="3" ry="1.7"><animateMotion dur="10s" begin="-7s" repeatCount="indefinite" path="M150 -10 C130 110 175 230 145 440"/><animate attributeName="opacity" values="0;1;1;0" dur="10s" begin="-7s" repeatCount="indefinite"/></ellipse>
-            <ellipse rx="2.6" ry="1.5" fill="#E6CF95"><animateMotion dur="12s" begin="-2s" repeatCount="indefinite" path="M100 -10 C120 140 85 260 110 440"/><animate attributeName="opacity" values="0;1;1;0" dur="12s" begin="-2s" repeatCount="indefinite"/></ellipse>
-            <ellipse rx="3" ry="1.7"><animateMotion dur="8.5s" begin="-5s" repeatCount="indefinite" path="M205 -10 C190 100 220 220 195 440"/><animate attributeName="opacity" values="0;1;1;0" dur="8.5s" begin="-5s" repeatCount="indefinite"/></ellipse>
-          </g>
-        </svg></div></div>
-      <svg class="leaf-l" aria-hidden="true"><use href="#sprig"/></svg>
-      <svg class="leaf-r" aria-hidden="true"><use href="#sprig"/></svg>
-    </figure>
-      <p class="pcap"><span class="pc1">Two hearts</span><span class="pc2">Fayas &amp; Fathima</span></p>
-    </div>
-  </section>
+  <figure class="still">
+    <div class="still-frame"><img src="couple.jpg" alt="Fayas and Fathima standing together, her hand resting on his arm"></div>
+    <figcaption><span class="pc1">Two hearts, one story</span><span class="pc2">Fayas &amp; Fathima</span></figcaption>
+  </figure>
 
   <section style="margin-top:3.5rem" aria-labelledby="fam">
     <p class="chapter">Chapter one</p>
