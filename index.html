@@ -691,6 +691,20 @@ body::after{opacity:.05}
 .tc .line2{font-size:clamp(1.9rem, 8vw, 2.6rem)}
 .tc .big{font-size:clamp(1.3rem, 5.5vw, 1.8rem)}
 .tc .sub{font-size:.95rem}
+
+/* scroll hint */
+.scrollhint{position:fixed; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px)); z-index:18; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.15rem;
+  font-family:"Montserrat", sans-serif; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap;
+  color:#E6CF95; background:rgba(8,32,25,.72); border:1px solid rgba(212,188,126,.45); border-radius:999px;
+  padding:.55rem 1.1rem .35rem; cursor:pointer; -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:0; transition:opacity .8s ease}
+.scrollhint[hidden]{display:none}
+.scrollhint.on{opacity:1}
+.scrollhint svg{width:22px; height:22px; animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)}}
+.scrollhint:focus-visible{outline:2px solid #E6CF95; outline-offset:3px}
+@media (prefers-reduced-motion: reduce){ .scrollhint svg{animation:none} }
 </style>
 </head>
 <body>
@@ -772,6 +786,11 @@ body::after{opacity:.05}
 <button class="music" id="musicBtn" aria-label="Pause music" hidden>
   <svg class="on-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
   <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/><path d="M3 3l18 18"/></svg>
+</button>
+
+<button class="scrollhint" id="scrollHint" hidden aria-label="Scroll down for full details">
+  <span>Scroll for full details</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity=".45"/></svg>
 </button>
 
 <main class="wrap">
@@ -1067,7 +1086,7 @@ function endIntro(){
   timers.forEach(clearTimeout);
   intro.classList.add('out');
   musicBtn.hidden = false; sync();
-  startReveals();
+  startReveals(); setTimeout(showHint, 1200);
   setTimeout(() => { intro.hidden = true; }, 1700);
 }
 function playIntro(){
@@ -1081,12 +1100,28 @@ function playIntro(){
   timers.push(setTimeout(() => cards.forEach(x => x.classList.remove('on')), t));
   timers.push(setTimeout(endIntro, t + 900));
 }
+
+/* ---------- Scroll hint ---------- */
+const hint = document.getElementById('scrollHint');
+let hintGone = false;
+function hideHint(){ if (hintGone) return; hintGone = true; hint.classList.remove('on'); setTimeout(() => { hint.hidden = true; }, 800); }
+function showHint(){
+  if (hintGone || scrollY > 120) return;
+  hint.hidden = false; requestAnimationFrame(() => requestAnimationFrame(() => hint.classList.add('on')));
+}
+hint.addEventListener('click', () => {
+  const next = document.querySelector('.wrap > .still') || document.querySelector('.wrap > section');
+  const y = next ? next.getBoundingClientRect().top + scrollY - 20 : innerHeight * .85;
+  window.scrollTo({top: y, behavior: reduce ? 'auto' : 'smooth'});
+  hideHint();
+});
+addEventListener('scroll', () => { if (scrollY > 120) hideHint(); }, {passive:true});
 document.getElementById('skipBtn').addEventListener('click', endIntro);
 
 document.getElementById('openBtn').addEventListener('click', ()=>{
   document.getElementById('cover').classList.add('gone');
   bgm.play().catch(()=>{});
-  if (reduce){ introDone = true; musicBtn.hidden = false; sync(); startReveals(); }
+  if (reduce){ introDone = true; musicBtn.hidden = false; sync(); startReveals(); setTimeout(showHint, 1200); }
   else playIntro();
 });
 </script>
