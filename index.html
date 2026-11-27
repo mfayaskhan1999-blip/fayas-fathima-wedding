@@ -455,6 +455,73 @@ body::after{opacity:.06}
 .intro-bg img{filter:grayscale(.35) brightness(.34) contrast(1.15)}
 .intro-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(30,48,90,.35), rgba(10,15,26,.2)); mix-blend-mode:screen}
 .music{background:#16203A; border-color:#D8BF8C; color:#F2EAD9}
+
+/* ================= Golden-hour warm theme ================= */
+body{
+  background-color:#F6E4CB;
+  background-image:
+    radial-gradient(circle at 88% 6%, rgba(255,176,96,.38) 0, transparent 34%),
+    radial-gradient(circle at 6% 30%, rgba(246,150,140,.22) 0, transparent 30%),
+    radial-gradient(circle at 92% 58%, rgba(255,200,120,.28) 0, transparent 30%),
+    radial-gradient(circle at 10% 86%, rgba(255,186,120,.26) 0, transparent 32%),
+    linear-gradient(180deg, #FCEEDB 0%, #F7E3C8 45%, #F3D8BA 100%);
+  background-attachment:fixed;
+}
+body::after{opacity:.05; mix-blend-mode:multiply}
+.wrap{
+  --ivory:#FFF8EE; --paper:#FBF0E1; --cream:#F3E2CA;
+  --ink:#3B2418; --ink-soft:#7A5A48;
+  --forest:#4A2A1A; --sage-deep:#B7793A; --sage:#B9686F;
+  --gold:#BE8A42; --line:rgba(176,120,60,.38);
+}
+.wrap .event, .wrap .rsvp-card, .wrap .count div{
+  background-color:rgba(255,249,240,.72); background-image:none;
+  box-shadow:0 0 0 1px rgba(190,138,66,.18), 0 22px 50px rgba(150,90,40,.16);
+}
+.wrap .chapter{color:#B9686F}
+.wrap .chapter::before, .wrap .chapter::after{background:#B9686F}
+.wrap .btn{color:#2E1A10; background:linear-gradient(180deg,#F0C482,#CB8D47); box-shadow:0 8px 18px rgba(160,100,40,.28)}
+.wrap .btn:hover{background:linear-gradient(180deg,#F5CD90,#D59852)}
+.wrap .pick{background:#FBF1E3; color:var(--ink)}
+.wrap .pick[aria-checked="true"]{background:#CB8D47; border-color:#CB8D47; color:#2E1A10}
+.wrap .pick[aria-checked="true"] .ico{color:#4A2A1A}
+.wrap .fld input[type=text], .wrap .fld textarea, .wrap .stepper{background:#FFFBF5; color:var(--ink)}
+.wrap .fld input::placeholder, .wrap .fld textarea::placeholder{color:#B09480}
+.wrap .err{color:#A3242F}
+.wrap{color-scheme:light}
+.divider path{stroke:#BE8A42; stroke-opacity:.75}
+.divider rect{fill:#BE8A42}
+
+.hero::before{background:radial-gradient(closest-side, rgba(255,214,150,.45), transparent)}
+.hero .bis{color:#B7793A; opacity:1}
+.hero .together{color:#7A5A48}
+.hero .couple{color:#4A2A1A; text-shadow:0 2px 30px rgba(255,200,140,.55)}
+.hero .couple .amp{color:#B9686F}
+.hero .datebar .side{color:#B7793A}
+.hero .datebar .mid b{color:#4A2A1A}
+.hero .year{color:#B9686F}
+.hero .together::before{background:linear-gradient(180deg, transparent, #BE8A42)}
+.hero .year::after{background:linear-gradient(180deg, #BE8A42, transparent)}
+
+.still-frame{box-shadow:0 26px 60px rgba(120,70,30,.28)}
+.still-frame img{filter:sepia(.32) saturate(1.1) contrast(1.04) brightness(1)}
+.still-frame::after{background:linear-gradient(180deg, rgba(255,190,120,.10), rgba(120,60,20,.18)), radial-gradient(ellipse at center, transparent 55%, rgba(90,45,15,.35))}
+.still-frame::before{
+  background:
+    linear-gradient(#BE8A42,#BE8A42) top left/22px 1px no-repeat, linear-gradient(#BE8A42,#BE8A42) top left/1px 22px no-repeat,
+    linear-gradient(#BE8A42,#BE8A42) top right/22px 1px no-repeat, linear-gradient(#BE8A42,#BE8A42) top right/1px 22px no-repeat,
+    linear-gradient(#BE8A42,#BE8A42) bottom left/22px 1px no-repeat, linear-gradient(#BE8A42,#BE8A42) bottom left/1px 22px no-repeat,
+    linear-gradient(#BE8A42,#BE8A42) bottom right/22px 1px no-repeat, linear-gradient(#BE8A42,#BE8A42) bottom right/1px 22px no-repeat}
+.still .pc1{color:#B9686F}
+.still .pc2{color:#4A2A1A}
+
+/* cover + intro graded warm golden */
+.cover::before{background:linear-gradient(180deg, rgba(70,35,15,.05) 0%, rgba(70,35,15,.2) 40%, rgba(58,28,12,.86) 72%, #3A1C0E 100%)}
+.cover img{filter:sepia(.4) saturate(1.15) brightness(.95)}
+.intro-bg img{filter:sepia(.6) saturate(1.25) brightness(.48) contrast(1.1)}
+.intro-bg::after{background:linear-gradient(160deg, rgba(255,150,60,.28), rgba(120,50,20,.15) 60%, rgba(255,190,120,.12)); mix-blend-mode:soft-light}
+.intro::before{background:radial-gradient(ellipse at center, transparent 40%, rgba(40,18,6,.7) 100%)}
+.music{background:#4A2A1A; border-color:#E0B06A; color:#FBEBD6}
 </style>
 </head>
 <body>
